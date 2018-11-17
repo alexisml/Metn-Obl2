@@ -1,0 +1,1 @@
+function y=back_euler(n,h,y0)  y(1,:) = y0;  for k = 1:n-1    [vecAux(1),vecAux(2),vecAux(3),vecAux(4)] = odeFunction( y(k,1),y(k,2),y(k,3),y(k,4));    yActual = y(k,:) + h.* vecAux;        solActual= newton4euler(y(k,:),yActual,h);        y(k+1,:) = solActual;  endforendfunction
